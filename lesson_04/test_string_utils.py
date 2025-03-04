@@ -57,10 +57,10 @@ def test_trim_negative(input_str, expected):
 @pytest.mark.negative
 @pytest.mark.parametrize("word, symbol, answer", [
     (" ", " ", True), ("", "", True),
-    ("cool", "с", False)])  # в последнем примере изменён язык
+    ("cool", "с", False)])  # в последнем примере изменен язык
 def test_contains_negative(word, symbol, answer):
-    ans = string_utils.contains(word, symbol)
-    assert ans == answer
+    answ = string_utils.contains(word, symbol)
+    assert answ == answer
 
 
 @pytest.mark.negative
@@ -70,5 +70,5 @@ def test_contains_negative(word, symbol, answer):
     ("Hello World", " ", "HelloWorld")])
 def test_delete_symbol_negative(word, symbol, string):
 
-    ans = string_utils.delete_symbol(word, symbol)
-    assert ans == string
+    answ = string_utils.delete_symbol(word, symbol)
+    assert answ == string
