@@ -9,7 +9,7 @@ driver.get("http://uitestingplayground.com/dynamicid")
 
 sleep(2)
 
-# click 
+# click
 button = driver.find_element(By.CSS_SELECTOR, "button.btn.btn-primary")
 button.click()
 
