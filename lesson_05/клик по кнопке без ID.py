@@ -10,8 +10,10 @@ driver.get("http://uitestingplayground.com/dynamicid")
 sleep(2)
 
 # click
-button = driver.find_element(By.XPATH,
-                             '//button[contains(text(), "Button with Dynamic ID")]')
+button = driver.find_element(
+    By.XPATH,
+    '//button[contains(text(), "Button with Dynamic ID")]')
+
 button.click()
 
 print("ok")
