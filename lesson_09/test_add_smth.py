@@ -21,3 +21,4 @@ def test_insert_subject():
             "delete from subject where (\"subject_title\") = (:title)"
             )
         connection.execute(delete_sql, title=new_subject)
+        assert new_subject == "Dancing"

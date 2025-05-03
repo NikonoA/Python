@@ -33,3 +33,5 @@ def test_delete_teacher():
             connection.execute(delete_sql, gr_id=new_teacher)
     else:
         print("No teacher found with the given email.")
+
+    assert new_teacher == 5555555

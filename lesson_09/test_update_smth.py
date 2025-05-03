@@ -33,3 +33,5 @@ def test_create_and_update_student():
             )
         with db.connect() as connection:
             connection.execute(delete_sql, sub_id=new_student)
+
+    assert new_student == 10
