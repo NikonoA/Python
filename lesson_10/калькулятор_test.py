@@ -26,21 +26,17 @@ to_be = 15
                     " правильный результат должен отобразиться "
                     "через указанное кол-во секунд")
 def test_calculator():
-    with allure.step("Проверка формы ввода"):
-        delay = Delay(driver)
-        delay.form_delay("45")
+    delay = Delay(driver)
+    delay.form_delay("45")
 
-    with allure.step("Проверка работы кнопок калькулятора"):
-        buttons = Buttons(driver)
-        buttons.enter_numbers()
+    buttons = Buttons(driver)
+    buttons.enter_numbers()
 
-    with allure.step("Проверка работы явного ожидания"):
-        wait1 = WebDriverWait(driver, 46)
-        wait1.until(
-            EC.text_to_be_present_in_element(
-                (By.CSS_SELECTOR, ".screen"), "15")
-                )
+    wait1 = WebDriverWait(driver, 46)
+    wait1.until(
+        EC.text_to_be_present_in_element(
+            (By.CSS_SELECTOR, ".screen"), "15")
+            )
 
-    with allure.step("Проверка соответствия значений as it и to be"):
-        as_it = buttons.count()
-        assert as_it == to_be
+    as_it = buttons.count()
+    assert as_it == to_be

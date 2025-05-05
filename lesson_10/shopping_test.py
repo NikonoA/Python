@@ -29,30 +29,26 @@ to_be = "Total: $58.29"
                     "корректность суммы")
 def test_shopping():
 
-    with allure.step("Проверка страницы авторизации"):
-        auth = Auth(driver)
-        auth.login("standard_user")
-        auth.password("secret_sauce")
+    auth = Auth(driver)
+    auth.login("standard_user")
+    auth.password("secret_sauce")
 
-    with allure.step("Проверка возможности добавления товаров в корзину"):
-        main = Main(driver)
-        main.goods()
-        wait1 = WebDriverWait(driver, 15)
-        wait1.until(
-            EC.text_to_be_present_in_element(
-                (By.CSS_SELECTOR, "span.title"), "Your Cart")
-                )
+    main = Main(driver)
+    main.goods()
+    wait1 = WebDriverWait(driver, 15)
+    wait1.until(
+        EC.text_to_be_present_in_element(
+            (By.CSS_SELECTOR, "span.title"), "Your Cart")
+            )
 
-    with allure.step("Проврека отображения товаров в корзине"):
-        cart = Cart(driver)
-        cart.checkout()
+    cart = Cart(driver)
+    cart.checkout()
 
-    with allure.step("Проверка заполнения формы для оплаты"):
-        form = Form(driver)
-        form.form_name("Aliona")
-        form.form_last_name("Nikonorova")
-        form.form_adress("111111")
-        form.next()
+    form = Form(driver)
+    form.form_name("Aliona")
+    form.form_last_name("Nikonorova")
+    form.form_adress("111111")
+    form.next()
 
     with allure.step("Проверка соответствия значений as it и to be"):
         as_it = form.count()
