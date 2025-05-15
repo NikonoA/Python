@@ -1,0 +1,1 @@
+[{"uid":"a187e1cbd500ce85","name":"The Shopping Store","time":{"start":1746479635755,"stop":1746479642593,"duration":6838},"status":"broken","severity":"blocker"},{"uid":"4b6607cdb95b8b3d","name":"The Slowest Calculator","time":{"start":1746479642988,"stop":1746479691787,"duration":48799},"status":"passed","severity":"blocker"}]
